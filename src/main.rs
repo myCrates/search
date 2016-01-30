@@ -1,5 +1,6 @@
 #![crate_name = "search"]
 #![crate_type = "bin"]
+#![doc(html_root_url = "https://mycrates.github.io/search/")]
 
 //! This is a binary to can make fast search on internet from the terminal.
 //! Try to use it and let me know how do you think about it !!!

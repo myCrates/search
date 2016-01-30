@@ -1,0 +1,18 @@
+language: rust
+rust:
+- 1.0.0
+- 1.1.0
+- stable
+- beta
+- nigthly
+after_success: |
+  [ $TRAVIS_BRANCH = master ] &&
+  [ $TRAVIS_PULL_REQUEST = false ] &&
+  cargo doc &&
+  echo "<meta http-equiv=refresh content=0;url=`echo $TRAVIS_REPO_SLUG | cut -d '/' -f 2`/index.html>" > target/doc/index.html &&
+  sudo pip install ghp-import &&
+  ghp-import -n target/doc &&
+  # TODO: change strategy to: https://github.com/kmcallister/travis-doc-upload
+  git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
+dd:
+  secure: GNZPeYx0gmKHoZFiNF/nhH5EU2c4LYAxgzwnvCEmCg2ElaEmyp+G1uInxFyVEgApT7Dqn36T4DOdHteLbR1kXz1/VnIurbVsj80hhmHr+9LL3h0CsqsAZyiVaAZnzf+AwaDluIqSOemDyetdNdPiAcoQQEWudZUaJwBOE3M9e92Mq6XHQYDDRwVBTOUmQruRWlouvX8FKzONqRSGbkFs7OF3BNcyzj4Ij0/xJnRHwyQn1Nf7+gkW3QnrH8Qw7t4YArGH4HcXNz/p3oYWDjXDMcApBcEqV3OFC49p3dA7hFyBzq5/te5O7nYyGXQCC4/IAXRtsuHDli+P+9MHXftiCiDtmlsuilQp5a9dkdAgvHCo/+k/aiV6qCFVVgAOAMuoO6fTDlacjdcHvvm14FsWKt/wkAARM2PPHeurW11roZ9PnuPdigwMojHxrhjn4/XYJvyscGdZTV5/1YQLJg91s5Dt/lSmjbO6c6Awxsj8uMMZ3dxvar/sEk07oKMj5IgA6ZAXYkCqr3J7BCNS4mtk0IJgB1PhX4HPcBoT5ykw28F1fJ2RcBJBp8E+DVf52NkN30W07RRI4bpNo3nx6rDl5sl0/wnnu+0KQDJUS21AMSgTWJ7wLDXbT8ZoZA9Pj62k2ZU0uFfNj5d+d65CYIErBTTczN/eZGKiA5eaiv5k1g8=

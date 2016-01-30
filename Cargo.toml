@@ -1,0 +1,6 @@
+[package]
+name = "search"
+version = "0.1.0"
+authors = ["mvaude <maxime.vaude@gmail.com>"]
+
+[dependencies]

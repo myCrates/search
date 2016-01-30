@@ -4,11 +4,6 @@ rust:
   - 1.1.0
   - stable
   - beta
-  - nigthly
-
-matrix:
-  allow_failures:
-    - rust: nightly
 
 after_success: |
   [ $TRAVIS_BRANCH = master ] &&

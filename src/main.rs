@@ -1,5 +1,5 @@
-#![crate bane = "search"]
-#![crate_type = "lib"]
+#![crate_name = "search"]
+#![crate_type = "bin"]
 
 //! This is a binary to can make fast search on internet from the terminal.
 //! Try to use it and let me know how do you think about it !!!
@@ -11,7 +11,7 @@ fn number() -> u8 {
 
 /// This functions tests number
 #[test]
-fn test number() {
+fn test_number() {
     assert_eq!(number(), 42);
 }
 

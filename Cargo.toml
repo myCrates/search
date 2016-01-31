@@ -20,4 +20,4 @@ default-features = false
 features = [ "suggestions", "color", "yaml" ]
 
 ["features"]
-default = [ "clap/yaml" ]
+default = [ "clap/unstable" ]

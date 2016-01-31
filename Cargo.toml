@@ -2,5 +2,19 @@
 name = "search"
 version = "0.1.0"
 authors = ["mvaude <maxime.vaude@gmail.com>"]
+repository = "https://github.com/myCrates/search.git"
+readme = "README.md"
+keywords = ["command", "search", "online", "parse"]
 
-[dependencies]
+[lib]
+name = "search"
+path = "src/lib.rs"
+
+[[bin]]
+name = "search"
+path = "src/bin.rs"
+
+[dependencies.clap]
+git = "https://github.com/kbknapp/clap-rs"
+default-features = false
+features = [ "suggestions", "color", "yaml" ]

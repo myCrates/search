@@ -15,16 +15,15 @@
 /// Import clap library
 #[macro_use]
 extern crate clap;
-use clap::App;
 
 /// # Main function
 ///
 /// Parse aguments with clap and call search library
-#[cfg(feature = "yaml")]
 fn main() {
+    use clap::App;
     // The YAML file is found relative to the current file, similar to how modules are found
-    let yaml = load_yaml!("cli/english.yml");
-    let matches = App::from_yaml(yaml).get_matches();
+    let yml = load_yaml!("cli/english.yml");
+    let matches = App::from_yaml(yml).get_matches();
 
     // Because the example 17_yaml.yml is rather large we'll just look a single arg so you can
     // see that it works...
@@ -37,11 +36,4 @@ fn main() {
     } else {
         println!("--mode <MODE> wasn't used...");
     }
-}
-
-#[cfg(not(feature = "yaml"))]
-fn main() {
-    // As stated above, if clap is not compiled with the YAML feature, it is disabled.
-    println!("YAML feature is disabled.");
-    println!("Pass --features yaml to cargo when trying this example.");
 }

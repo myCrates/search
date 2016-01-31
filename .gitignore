@@ -1,2 +1,16 @@
+# Compiled files
+*.o
+*.so
+*.rlib
+*.dll
+
+# Cargo files
 target
 Cargo.lock
+
+# Tmp files
+**/*~
+
+# Backup files
+**/*.bak
+**/*.bk

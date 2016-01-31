@@ -37,7 +37,6 @@ fn main() {
     } else {
         println!("--mode <MODE> wasn't used...");
     }
-    // more program logic goes here...
 }
 
 #[cfg(not(feature = "yaml"))]

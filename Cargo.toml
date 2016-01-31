@@ -18,3 +18,7 @@ path = "src/bin.rs"
 git = "https://github.com/kbknapp/clap-rs"
 default-features = false
 features = [ "suggestions", "color", "yaml" ]
+
+[features]
+default = ["yaml"]
+yaml = ["clap/yaml"]
